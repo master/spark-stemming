@@ -1,4 +1,12 @@
-# Spark Stemming
+# Spark Stemming [Fork]
+
+This fork fixes the Stemmer to work with Seq[String], rather than merely String. This allows easy use with Tokenizer and other transformers that work with arrays. I also updated to Spark 2.2 though it seemed to compile fine with the original Spark version as well.
+
+The specific error I encountered was "Array(StringType): java.lang.IllegalArgumentException: requirement failed: Input type must be string type but got ArrayType(StringType,true)".
+
+I have not submitted anything to Maven Central, etc., so you will need to build locally if you want the changes.
+
+Original README follows from here.
 
 [![Build Status](https://travis-ci.org/master/spark-stemming.svg?branch=master)](https://travis-ci.org/master/spark-stemming)
 
