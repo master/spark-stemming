@@ -7,7 +7,7 @@ import org.apache.spark.ml.util.Identifiable
 import org.apache.spark.ml.param.{Param, ParamMap}
 import org.apache.spark.ml.UnaryTransformer
 
-class Stemmer(override val uid: String) extends UnaryTransformer[Seq[String], Seq[String], Stemmer] {
+class Stemmer(override val uid: String) extends UnaryTransformer[Seq[String], Seq[String], Stemmer] with DefaultParamsWritable {
 
   def this() = this(Identifiable.randomUID("stemmer"))
 
