@@ -3,7 +3,7 @@ package org.apache.spark.mllib.feature
 import org.tartarus.snowball.SnowballStemmer
 
 import org.apache.spark.sql.types.{DataType, StringType, ArrayType}
-import org.apache.spark.ml.util.Identifiable
+import org.apache.spark.ml.util.{DefaultParamsReadable, DefaultParamsWritable, Identifiable}
 import org.apache.spark.ml.param.{Param, ParamMap}
 import org.apache.spark.ml.UnaryTransformer
 
