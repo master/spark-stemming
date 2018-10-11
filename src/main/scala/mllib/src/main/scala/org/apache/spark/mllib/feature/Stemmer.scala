@@ -36,3 +36,8 @@ class Stemmer(override val uid: String) extends UnaryTransformer[Seq[String], Se
 
   override def copy(extra: ParamMap): Stemmer = defaultCopy(extra)
 }
+
+object Stemmer extends DefaultParamsReadable[Stemmer] {
+
+  override def load(path: String): Stemmer = super.load(path)
+}
