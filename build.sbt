@@ -4,7 +4,7 @@ organization := "com.github.master"
 
 spName := "master/spark-stemming"
 
-version := "0.2.0"
+version := "0.2.1"
 
 sparkVersion := "2.2.0"
 
