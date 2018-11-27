@@ -3,11 +3,11 @@ package org.apache.spark.mllib.feature
 import org.tartarus.snowball.SnowballStemmer
 
 import org.apache.spark.sql.types.{DataType, StringType, ArrayType}
-import org.apache.spark.ml.util.Identifiable
+import org.apache.spark.ml.util.{DefaultParamsReadable, DefaultParamsWritable, Identifiable}
 import org.apache.spark.ml.param.{Param, ParamMap}
 import org.apache.spark.ml.UnaryTransformer
 
-class Stemmer(override val uid: String) extends UnaryTransformer[Seq[String], Seq[String], Stemmer] {
+class Stemmer(override val uid: String) extends UnaryTransformer[Seq[String], Seq[String], Stemmer] with DefaultParamsWritable {
 
   def this() = this(Identifiable.randomUID("stemmer"))
 
@@ -35,4 +35,9 @@ class Stemmer(override val uid: String) extends UnaryTransformer[Seq[String], Se
   override protected def outputDataType: DataType = new ArrayType(StringType, false)
 
   override def copy(extra: ParamMap): Stemmer = defaultCopy(extra)
+}
+
+object Stemmer extends DefaultParamsReadable[Stemmer] {
+
+  override def load(path: String): Stemmer = super.load(path)
 }
